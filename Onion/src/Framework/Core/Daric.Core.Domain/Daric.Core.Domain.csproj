@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+ 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+  </ItemGroup>
+ 
+  <ItemGroup>
+    <ProjectReference Include="..\Daric.Core.Infrastructure\Daric.Core.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

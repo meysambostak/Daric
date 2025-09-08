@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Meysam Bostak",
+  "classifications": ["MVC", ".NET Core", "ASP.NET Core"],
+  "name": "Empty Daric Template Framework project",
+  "identity": "Daric.Framework",
+  "shortName": "darictemplate",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#"
+  },
+  "sourceName": "DaricTemplate",
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net9.0",
+          "description": "Target .NET 9"
+        }
+      ],
+      "defaultValue": "net9.0",
+      "replaces": "net9.0"
+    }
+  }
+}

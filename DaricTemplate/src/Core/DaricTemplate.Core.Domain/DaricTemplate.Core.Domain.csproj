@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Daric.Core.Domain">
+      <HintPath>..\..\..\..\Onion\src\Framework\Core\Daric.Core.Domain\bin\Debug\net9.0\Daric.Core.Domain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

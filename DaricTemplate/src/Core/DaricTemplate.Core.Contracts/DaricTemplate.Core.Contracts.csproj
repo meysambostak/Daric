@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DaricTemplate.Core.Domain\DaricTemplate.Core.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Daric.Core.Contracts">
+      <HintPath>..\..\..\..\Onion\src\Framework\Core\Daric.Core.Contracts\bin\Debug\net9.0\Daric.Core.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Daric.Core.Domain">
+      <HintPath>..\..\..\..\Onion\src\Framework\Core\Daric.Core.Domain\bin\Debug\net9.0\Daric.Core.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Daric.Core.Infrastructure">
+      <HintPath>..\..\..\..\Onion\src\Framework\Core\Daric.Core.Infrastructure\bin\Debug\net9.0\Daric.Core.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

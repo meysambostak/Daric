@@ -1,10 +1,10 @@
 ﻿using Daric.Core.Contracts.ApplicationServices.Queries;
 using Daric.Core.Infrastructure.Abstractions.Logger;
-using Daric.Core.Infrastructure.Queries;
+using Daric.Core.Infrastructure.RequestResponse.Queries;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
- 
+
 namespace Daric.Core.ApplicationServices.Queries;
 
 public class QueryDispatcher : IQueryDispatcher

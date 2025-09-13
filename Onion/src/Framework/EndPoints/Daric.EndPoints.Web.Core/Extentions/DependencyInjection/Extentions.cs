@@ -58,9 +58,11 @@ public static class Extensions
 
     private static List<Assembly> GetAssemblies(string[] assmblyName)
     {
-
         var assemblies = new List<Assembly>();
-        IReadOnlyList<RuntimeLibrary> dependencies = DependencyContext.Default.RuntimeLibraries;
+        DependencyContext? dependencyContext = DependencyContext.Default 
+            ?? throw new InvalidOperationException("DependencyContext.Default is null. Ensure the application is running in a supported environment.");
+
+        IReadOnlyList<RuntimeLibrary> dependencies = dependencyContext.RuntimeLibraries;
         foreach (RuntimeLibrary library in dependencies)
         {
             if (IsCandidateCompilationLibrary(library, assmblyName))

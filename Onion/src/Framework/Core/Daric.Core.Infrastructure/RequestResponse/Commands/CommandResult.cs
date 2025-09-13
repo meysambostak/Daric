@@ -1,6 +1,6 @@
-﻿using Daric.Core.Infrastructure.Common;
+﻿using Daric.Core.Infrastructure.RequestResponse.Common;
 
-namespace Daric.Core.Infrastructure.Commands;
+namespace Daric.Core.Infrastructure.RequestResponse.Commands;
 
 /// https://github.com/vkhorikov/CqrsInPractice
 

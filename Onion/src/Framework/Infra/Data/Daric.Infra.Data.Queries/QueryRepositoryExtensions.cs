@@ -1,7 +1,7 @@
 ﻿using Daric.Core.Infrastructure.Helpers.Extensions;
-using Daric.Core.Infrastructure.Queries;
+using Daric.Core.Infrastructure.RequestResponse.Queries;
 using Microsoft.EntityFrameworkCore;
- 
+
 
 namespace Daric.Infra.Data.Queries;
 

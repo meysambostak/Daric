@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Daric.Infra.Data.Commands;
 
-public class BaseCommandRepository<TEntity, TDbContext, TId> : ICommandRepository<TEntity, TId>  , IUnitOfWork
+public class BaseCommandRepository<TEntity, TDbContext, TId> : ICommandRepository<TEntity, TId>, IUnitOfWork
     where TEntity : AggregateRoot<TId>
     where TDbContext : BaseCommandDbContext
      where TId : struct,
@@ -92,13 +92,13 @@ public class BaseCommandRepository<TEntity, TDbContext, TId> : ICommandRepositor
 
     public bool Exists(Expression<Func<TEntity, bool>> expression)
     {
-        var res = _dbContext.Set<TEntity>().SingleOrDefault(expression);
+        TEntity? res = _dbContext.Set<TEntity>().SingleOrDefault(expression);
         return res == null ? false : true;
     }
 
     public async Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> expression)
     {
-        var res = await _dbContext.Set<TEntity>().SingleOrDefaultAsync(expression);
+        TEntity? res = await _dbContext.Set<TEntity>().SingleOrDefaultAsync(expression);
         return res == null ? false : true;
     }
     #endregion
@@ -161,11 +161,6 @@ public class BaseCommandRepository<TEntity, TDbContext, TId> : ICommandRepositor
     public Task BeginTransactionAsync() => _dbContext.BeginTransactionAsync();
 
     public Task BeginTransactionAsync(IsolationLevel isolationLevel) => _dbContext.BeginTransactionAsync(isolationLevel);
-
-    public int Commit() => _dbContext.SaveChanges();
-
-    public Task<int> CommitAsync() => _dbContext.SaveChangesAsync();
-
     public void CommitTransaction() => _dbContext.CommitTransaction();
 
     public Task CommitTransactionAsync() => _dbContext.CommitTransactionAsync();
@@ -196,4 +191,13 @@ public class BaseCommandRepository<TEntity, TDbContext, TId> : ICommandRepositor
     #endregion
 
 
+}
+
+public class BaseCommandRepository<TEntity, TDbContext> : BaseCommandRepository<TEntity, TDbContext, long>
+    where TEntity : AggregateRoot
+    where TDbContext : BaseCommandDbContext
+{
+    public BaseCommandRepository(TDbContext dbContext) : base(dbContext)
+    {
+    }
 }

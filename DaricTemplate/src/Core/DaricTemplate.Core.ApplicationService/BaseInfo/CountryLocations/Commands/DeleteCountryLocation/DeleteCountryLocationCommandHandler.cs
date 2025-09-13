@@ -1,6 +1,6 @@
 ﻿
 using Daric.Core.ApplicationServices.Commands;
-using Daric.Core.Infrastructure.Commands;
+using Daric.Core.Infrastructure.RequestResponse.Commands;
 using DaricTemplate.Core.Contracts.BaseInfo.CountryLocations;
 using DaricTemplate.Core.Contracts.BaseInfo.CountryLocations.Commands.DeleteCountryLocation;
 

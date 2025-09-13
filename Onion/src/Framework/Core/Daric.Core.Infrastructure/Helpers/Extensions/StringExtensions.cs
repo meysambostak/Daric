@@ -11,9 +11,9 @@ public static class StringExtensions
 
 
 
-    public static string ApplyCorrectYeKe(this object data)
+    public static string? ApplyCorrectYeKe(this object? data)
     {
-        return data == null ? null : data.ToString().ApplyCorrectYeKe();
+        return data?.ToString()?.ApplyCorrectYeKe();
     }
 
     public static string ApplyCorrectYeKe(this string data)

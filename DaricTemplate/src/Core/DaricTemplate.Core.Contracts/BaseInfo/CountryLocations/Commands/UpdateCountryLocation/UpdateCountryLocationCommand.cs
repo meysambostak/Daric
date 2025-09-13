@@ -1,4 +1,5 @@
-﻿using Daric.Core.Infrastructure.Commands;
+﻿ 
+using Daric.Core.Infrastructure.RequestResponse.Commands;
 using DaricTemplate.Core.Domain.BaseInfo.CountryLocations.Entities;
 
 namespace DaricTemplate.Core.Contracts.BaseInfo.CountryLocations.Commands.UpdateCountryLocation;

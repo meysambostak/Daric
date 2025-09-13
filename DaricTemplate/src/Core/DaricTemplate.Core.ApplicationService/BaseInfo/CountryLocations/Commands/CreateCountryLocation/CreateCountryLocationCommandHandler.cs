@@ -1,7 +1,7 @@
 ﻿
 
 using Daric.Core.ApplicationServices.Commands;
-using Daric.Core.Infrastructure.Commands;
+using Daric.Core.Infrastructure.RequestResponse.Commands;
 using DaricTemplate.Core.Contracts.BaseInfo.CountryLocations;
 using DaricTemplate.Core.Contracts.BaseInfo.CountryLocations.Commands.CreateCountryLocation;
 using DaricTemplate.Core.Domain.BaseInfo.CountryLocations.Entities;
@@ -23,7 +23,7 @@ public class CreateCountryLocationCommandHandler : CommandHandler<CreateCountryL
 
         var result = new CommandResult<long>();
         var countryLocation = CountryLocation.Create(command.LocationType, command.Code, command.Title, command.AlternativeTitle,
-                                                                 command.Abbreviation, command.IsPort, command.ParentCountryLocationId);
+                                                                 command.Abbreviation, command.ParentCountryLocationId);
 
         await _countryLocationCommandRepository.CreateAsync(countryLocation);
         result._data = countryLocation.Id;

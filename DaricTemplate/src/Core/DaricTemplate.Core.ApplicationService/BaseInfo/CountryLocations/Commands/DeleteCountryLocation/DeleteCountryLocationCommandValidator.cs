@@ -15,7 +15,7 @@ public class DeleteCountryLocationCommandValidator : AbstractValidator<DeleteCou
             .Must(ChechIsExsitCountryLocation).WithMessage("CountryLocation With This Id Is Not Exist");
 
     }
-    bool ChechIsExsitCountryLocation(long countryLocationId)
+    private bool ChechIsExsitCountryLocation(long countryLocationId)
     {
         return !_countryLocationCommandRepository.Exists(c => c.Id == countryLocationId);
     }

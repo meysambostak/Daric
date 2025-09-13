@@ -6,7 +6,11 @@ namespace Daric.EndPoints.Web.Core.ModelBinding;
 
 public sealed class NonValidatingValidator : IObjectModelValidator
 {
-    public void Validate(ActionContext actionContext, ValidationStateDictionary validationState, string prefix, object model)
+    public void Validate(
+        ActionContext actionContext,
+        ValidationStateDictionary? validationState,
+        string prefix,
+        object? model)
     {
         foreach (ModelStateEntry entry in actionContext.ModelState.Values)
         {

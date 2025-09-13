@@ -39,7 +39,7 @@ public static class HostingExtensions
        
 
 
-        builder.Services.AddControllers();
+       // builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
       //  builder.Services.AddOpenApi(); // اضافه کردن OpenAPI برای Scalar
 

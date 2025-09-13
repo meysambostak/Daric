@@ -1,10 +1,10 @@
 ﻿
 using DaricTemplate.Core.Domain.BaseInfo.CountryLocations.Entities;
-using Daric.Core.ApplicationServices.Commands;
-using Daric.Core.Infrastructure.Commands;
+using Daric.Core.ApplicationServices.Commands; 
 using Daric.Extensions.ObjectMappers.AutoMapper.Services;
 using DaricTemplate.Core.Contracts.BaseInfo.CountryLocations;
 using DaricTemplate.Core.Contracts.BaseInfo.CountryLocations.Commands.UpdateCountryLocation;
+using Daric.Core.Infrastructure.RequestResponse.Commands;
 
 namespace MiniTest.Core.ApplicationService.Commands.BaseInfo.CountryLocations.UpdateCountryLocation;
 

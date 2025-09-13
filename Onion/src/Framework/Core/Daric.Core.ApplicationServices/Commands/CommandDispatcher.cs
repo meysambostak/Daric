@@ -1,7 +1,7 @@
-﻿using System.Diagnostics; 
+﻿using System.Diagnostics;
 using Daric.Core.Contracts.ApplicationServices.Commands;
 using Daric.Core.Infrastructure.Abstractions.Logger;
-using Daric.Core.Infrastructure.Commands;
+using Daric.Core.Infrastructure.RequestResponse.Commands;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 

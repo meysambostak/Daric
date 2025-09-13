@@ -1,10 +1,8 @@
-﻿using Daric.Core.Infrastructure.Queries;
+﻿using Daric.Core.Infrastructure.RequestResponse.Queries;
 
 namespace Daric.Core.Contracts.ApplicationServices.Queries;
 
-/// <summary>
-/// تعریف ساختار الگوی Mediator جهت اتصال ساده کوئری‌ها به هندلر‌ها
-/// </summary>
+ 
 public interface IQueryDispatcher
 {
     Task<QueryResult<TData>> Execute<TQuery, TData>(TQuery query) where TQuery : class, IQuery<TData>;

@@ -1,4 +1,4 @@
-﻿namespace Daric.Core.Infrastructure.Common;
+﻿namespace Daric.Core.Infrastructure.RequestResponse.Common;
 public enum ApplicationServiceStatus
 {
     Ok = 1,

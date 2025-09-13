@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 namespace Daric.Infra.Data.Commands.Extensions;
 public static class AuditableShadowProperties
 {
- 
+
     public static readonly Func<object, DateTime?> EFPropertyCreatedDateTime =
-                                    entity => EF.Property<DateTime?>(entity, CreatedDateTime);
+        entity => EF.Property<DateTime?>(entity, CreatedDateTime!);
     public static readonly string CreatedDateTime = nameof(CreatedDateTime);
 
     public static readonly Func<object, DateTime?> EFPropertyModifiedDateTime =
-                                    entity => EF.Property<DateTime?>(entity, ModifiedDateTime);
+        entity => EF.Property<DateTime?>(entity, ModifiedDateTime!);
     public static readonly string ModifiedDateTime = nameof(ModifiedDateTime);
 
     public static void AddAuditableShadowProperties(this ModelBuilder modelBuilder)

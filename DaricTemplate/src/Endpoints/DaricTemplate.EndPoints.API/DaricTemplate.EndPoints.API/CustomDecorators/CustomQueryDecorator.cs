@@ -1,7 +1,7 @@
 ﻿
 
 using Daric.Core.ApplicationServices.Queries;
-using Daric.Core.Infrastructure.Queries;
+using Daric.Core.Infrastructure.RequestResponse.Queries;
 
 namespace DaricTemplate.EndPoints.API.CustomDecorators;
 

@@ -1,8 +1,8 @@
 ﻿
 
 using Daric.Core.Contracts.ApplicationServices.Commands;
-using Daric.Core.Infrastructure.Commands;
-using Daric.Core.Infrastructure.Common;
+using Daric.Core.Infrastructure.RequestResponse.Commands;
+using Daric.Core.Infrastructure.RequestResponse.Common;
 
 namespace Daric.Core.ApplicationServices.Commands;
 

@@ -8,7 +8,10 @@ public static class AddApiConfigurationExtensions
 {
     public static IServiceCollection AddFrameworkApiCore(this IServiceCollection services, params string[] assemblyNamesForLoad)
     {
-        services.AddControllers().AddFluentValidation();
+        //services.AddControllers().AddFluentValidation(); TODO :: BSK Is deprecated
+        services.AddControllers();
+        services.AddFluentValidationAutoValidation();
+        services.AddFluentValidationClientsideAdapters();
         services.AddFrameworkDependencies(assemblyNamesForLoad);
 
         return services;

@@ -1,4 +1,4 @@
-﻿namespace Daric.Core.Infrastructure.Queries;
+﻿namespace Daric.Core.Infrastructure.RequestResponse.Queries;
 
 /// <summary>
 /// کلاس پایه جهت استفاده به عنوان مارکر برای کلاس‌هایی که پارامتر‌های ورودی را برای جستجو تعیین می‌کنند!

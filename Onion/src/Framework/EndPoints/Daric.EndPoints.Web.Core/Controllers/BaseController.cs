@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net; 
+using System.Net;
 using Daric.EndPoints.Web.Core.Extentions;
 using Daric.Core.Contracts.ApplicationServices.Commands;
 using Daric.Core.Contracts.ApplicationServices.Queries;
 using Daric.Core.Contracts.ApplicationServices.Events;
-using Daric.Core.Infrastructure.Commands;
-using Daric.Core.Infrastructure.Common;
-using Daric.Core.Infrastructure.Queries;
+using Daric.Core.Infrastructure.RequestResponse.Common;
+using Daric.Core.Infrastructure.RequestResponse.Queries;
+using Daric.Core.Infrastructure.RequestResponse.Commands;
 
 namespace Daric.EndPoints.Web.Core.Controllers;
 

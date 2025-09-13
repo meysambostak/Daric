@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Daric.Core.Infrastructure.Queries;
+using Daric.Core.Infrastructure.RequestResponse.Queries;
 
 namespace DaricTemplate.Core.Contracts.Common.Queries;
 

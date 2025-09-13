@@ -1,4 +1,4 @@
-﻿using Daric.Core.Infrastructure.Commands;
+﻿using Daric.Core.Infrastructure.RequestResponse.Commands;
 
 namespace Daric.Core.Contracts.ApplicationServices.Commands;
 

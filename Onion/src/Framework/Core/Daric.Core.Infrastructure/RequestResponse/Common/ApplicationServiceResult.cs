@@ -1,4 +1,4 @@
-﻿namespace Daric.Core.Infrastructure.Common;
+﻿namespace Daric.Core.Infrastructure.RequestResponse.Common;
 public abstract class ApplicationServiceResult : IApplicationServiceResult
 {
     protected readonly List<string> _messages = new();

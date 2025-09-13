@@ -1,4 +1,4 @@
-﻿namespace Daric.Core.Infrastructure.Queries;
+﻿namespace Daric.Core.Infrastructure.RequestResponse.Queries;
 /// <summary>
 /// ساختار پایه جهت بازگشت داده‌ها هنگام کوئری گرفتن وقتی که Paging دارد
 /// </summary>

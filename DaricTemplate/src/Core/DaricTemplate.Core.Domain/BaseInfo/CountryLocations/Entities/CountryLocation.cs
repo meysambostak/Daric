@@ -16,7 +16,7 @@ public class CountryLocation : AggregateRoot, IAuditableEntity
     {
 
     }
-    private CountryLocation(byte locationType, Code code, Title title, string alternativeTitle, Abbreviation abbreviation, bool? isPort, BusinessId parentCountryLocationId)
+    private CountryLocation(byte locationType, Code code, Title title, string alternativeTitle, Abbreviation abbreviation, BusinessId parentCountryLocationId)
     {
         LocationType = locationType;
         Code = code;
@@ -24,13 +24,13 @@ public class CountryLocation : AggregateRoot, IAuditableEntity
         AlternativeTitle = alternativeTitle;
         Abbreviation = abbreviation; 
         ParentCountryLocationId = parentCountryLocationId;
-        AddEvent(new CountryLocationCreated(BusinessId.Value, Id, locationType, code.Value, title.Value, alternativeTitle, abbreviation.Value, isPort.Value, parentCountryLocationId.Value));
+        AddEvent(new CountryLocationCreated(BusinessId.Value, Id, locationType, code.Value, title.Value, alternativeTitle, abbreviation.Value, parentCountryLocationId.Value));
     }
     #endregion
 
     #region Commands
-    public static CountryLocation Create(byte locationType, Code code, Title title, string alternativeTitle, Abbreviation abbreviation, bool? isPort, BusinessId parentCountryLocationId)
-        => new CountryLocation(locationType, code, title, alternativeTitle, abbreviation, isPort, parentCountryLocationId);
+    public static CountryLocation Create(byte locationType, Code code, Title title, string alternativeTitle, Abbreviation abbreviation,  BusinessId parentCountryLocationId)
+        => new CountryLocation(locationType, code, title, alternativeTitle, abbreviation, parentCountryLocationId);
     #endregion
 
     public byte LocationType { get; set; }

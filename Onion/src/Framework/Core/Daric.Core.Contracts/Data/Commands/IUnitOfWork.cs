@@ -50,8 +50,7 @@ public interface IUnitOfWork
     /// برای تایید تراکنشی که اتوماتیک توسط سیستم ایجاد شده است از این متد استفاده می‌شود.
     /// </summary>
     /// <returns></returns>
-    int Commit();
-    Task<int> CommitAsync();
+ 
     int SaveChanges();
     Task<int> SaveChangesAsync();
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = new());

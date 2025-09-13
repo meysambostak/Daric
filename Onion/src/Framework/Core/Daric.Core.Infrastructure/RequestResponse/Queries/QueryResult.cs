@@ -1,6 +1,6 @@
-﻿using Daric.Core.Infrastructure.Common;
+﻿using Daric.Core.Infrastructure.RequestResponse.Common;
 
-namespace Daric.Core.Infrastructure.Queries;
+namespace Daric.Core.Infrastructure.RequestResponse.Queries;
 
  
 public sealed class QueryResult<TData> : ApplicationServiceResult

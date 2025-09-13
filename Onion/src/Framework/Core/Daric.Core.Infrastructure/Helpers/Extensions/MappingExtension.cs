@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using Daric.Core.Infrastructure.Helpers.Guards;
+using Daric.Core.Infrastructure.Helpers.Guards.GuardClauses;
 
-namespace Daric.Core.Infrastructure.Extention;
+namespace Daric.Core.Infrastructure.Helpers.Extensions;
 
 public static class MappingExtension
 {
@@ -9,7 +11,9 @@ public static class MappingExtension
 
     public static string GetSchema(this Type type)
     {
-        type?.Namespace?.CheckArgumentIsNull(nameof(type.Namespace));
+        Guard.ThrowIf.NullArgument(type?.Namespace, nameof(type.Namespace));
+
+        ///type?.Namespace?.CheckArgumentIsNull(nameof(type.Namespace));
         return type?.Namespace?.Split('.').Last();
     }
 

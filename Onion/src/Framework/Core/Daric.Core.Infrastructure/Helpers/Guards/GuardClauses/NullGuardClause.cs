@@ -12,4 +12,14 @@ public static class NullGuardClause
         if (value != null)
             throw new InvalidOperationException(message);
     }
+
+
+    public static void NullArgument<T>(this Guard guard, T value, string name)
+    { 
+
+        if (value == null)
+            throw new ArgumentNullException(name);
+    }
+
+    
 }

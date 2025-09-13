@@ -8,18 +8,15 @@ public class ApiExceptionMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly ILogger<ApiExceptionMiddleware> _logger;
-    private readonly ApiExceptionOptions _options;
-   // private readonly IJsonSerializer _serializer; 
+    private readonly ApiExceptionOptions _options; 
 
     public ApiExceptionMiddleware(ApiExceptionOptions options, RequestDelegate next,
-        ILogger<ApiExceptionMiddleware> logger
-        //, IJsonSerializer serializer
+        ILogger<ApiExceptionMiddleware> logger 
         )
     {
         _next = next;
         _logger = logger;
-        _options = options;
-       // _serializer = serializer; 
+        _options = options; 
     }
 
     public async Task Invoke(HttpContext context)

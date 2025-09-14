@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+ 
+
+
+  <ItemGroup>
+    
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+
+ 
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\Framework\Infra\Data\Daric.Infra.Data.Commands\Daric.Infra.Data.Commands.csproj" />
+    <ProjectReference Include="..\..\..\Core\DaricTemplate.Core.Contracts\DaricTemplate.Core.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\Core\DaricTemplate.Core.Domain\DaricTemplate.Core.Domain.csproj" />
+  </ItemGroup>
+
+ 
+   
+
+</Project>

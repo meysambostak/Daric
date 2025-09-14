@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\DaricTemplate.Core.Contracts\DaricTemplate.Core.Contracts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Daric.Infra.Data.Queries">
+      <HintPath>..\..\..\..\..\Onion\src\Framework\Infra\Data\Daric.Infra.Data.Queries\bin\Debug\net9.0\Daric.Infra.Data.Queries.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

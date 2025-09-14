@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+		<PackageReference Include="FluentValidation.AspNetCore" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" />
+		<PackageReference Include="Microsoft.Extensions.DependencyModel" />
+		<PackageReference Include="Microsoft.Data.SqlClient" />
+		<PackageReference Include="Scrutor" />
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\Core\Daric.Core.ApplicationServices\Daric.Core.ApplicationServices.csproj" />
+		<ProjectReference Include="..\..\Core\Daric.Core.Contracts\Daric.Core.Contracts.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿ 
 
 namespace Daric.Core.Contracts.Data.Commands;
  
 public interface IUnitOfWork
 {
     void MigrateDatabase();
-    DbSet<TEntity> Set<TEntity>() where TEntity : class;
+   // DbSet<TEntity> Set<TEntity>() where TEntity : class;
 
     T GetShadowPropertyValue<T>(object entity, string propertyName) where T : IConvertible;
     object GetShadowPropertyValue(object entity, string propertyName);

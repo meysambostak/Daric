@@ -1,5 +1,4 @@
-﻿
-using System.Reflection;
+﻿using System.Reflection;
 using Daric.Core.ApplicationServices.Commands;
 using Daric.Core.ApplicationServices.Events;
 using Daric.Core.ApplicationServices.Queries;
@@ -131,6 +130,94 @@ public static class AddApplicationServicesExtensions
     }
 
     private static IServiceCollection AddFluentValidators(this IServiceCollection services, IEnumerable<Assembly> assembliesForSearch)
-        => services.AddValidatorsFromAssemblies(assembliesForSearch);
+    {
+        // Try to use FluentValidation.DependencyInjectionExtensions if available
+        if (TryAddValidatorsViaPackage(services, assembliesForSearch))
+            return services;
+
+        // Fallback: manually scan and register IValidator<T> as transient
+        foreach (var assembly in assembliesForSearch)
+        {
+            Type[] types;
+            try { types = assembly.GetTypes(); }
+            catch (ReflectionTypeLoadException ex)
+            {
+                types = ex.Types.Where(t => t is not null).Cast<Type>().ToArray();
+            }
+
+            foreach (var type in types)
+            {
+                if (type is null || type.IsAbstract || type.IsInterface)
+                    continue;
+
+                var validatorInterfaces = type.GetInterfaces()
+                    .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IValidator<>))
+                    .ToArray();
+
+                if (validatorInterfaces.Length == 0)
+                    continue;
+
+                foreach (var @interface in validatorInterfaces)
+                {
+                    services.AddTransient(@interface, type);
+                }
+            }
+        }
+
+        return services;
+    }
+
+    private static bool TryAddValidatorsViaPackage(IServiceCollection services, IEnumerable<Assembly> assembliesForSearch)
+    {
+        try
+        {
+            var asm = AppDomain.CurrentDomain.GetAssemblies()
+                        .FirstOrDefault(a => a.GetName().Name == "FluentValidation.DependencyInjectionExtensions")
+                      ?? Assembly.Load(new AssemblyName("FluentValidation.DependencyInjectionExtensions"));
+
+            var extType = asm?.GetType("FluentValidation.DependencyInjectionExtensions.ServiceCollectionExtensions");
+            if (extType is null) return false;
+
+            var method = extType.GetMethods(BindingFlags.Public | BindingFlags.Static)
+                .FirstOrDefault(m =>
+                    m.Name == "AddValidatorsFromAssemblies" &&
+                    m.GetParameters().Length >= 2 &&
+                    typeof(IServiceCollection).IsAssignableFrom(m.GetParameters()[0].ParameterType) &&
+                    typeof(IEnumerable<Assembly>).IsAssignableFrom(m.GetParameters()[1].ParameterType));
+
+            if (method is null) return false;
+
+            var parameters = method.GetParameters();
+            object?[] args;
+
+            if (parameters.Length == 2)
+            {
+                args = new object?[] { services, assembliesForSearch };
+            }
+            else
+            {
+                // Supply defaults for optional parameters when present
+                var list = new List<object?> { services, assembliesForSearch };
+                for (int i = 2; i < parameters.Length; i++)
+                {
+                    var p = parameters[i];
+                    if (p.HasDefaultValue)
+                        list.Add(p.DefaultValue);
+                    else if (p.ParameterType.IsEnum && p.ParameterType.Name == "ServiceLifetime")
+                        list.Add(Enum.Parse(p.ParameterType, "Transient"));
+                    else
+                        list.Add(null);
+                }
+                args = list.ToArray();
+            }
+
+            method.Invoke(null, args);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
 }
 

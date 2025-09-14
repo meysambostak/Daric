@@ -1,0 +1,6 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Framework\Core\Daric.Core.Domain\Daric.Core.Domain.csproj" />
+    <ProjectReference Include="..\DaricTemplate.Core.Infrastructure\DaricTemplate.Core.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

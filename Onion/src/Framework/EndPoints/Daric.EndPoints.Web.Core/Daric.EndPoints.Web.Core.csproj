@@ -4,12 +4,17 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>$(VersionPrefix)</Version>
   </PropertyGroup>
 
  
 
-  <ItemGroup>
-    <PackageReference Include="FluentValidation.AspNetCore" />
+  <ItemGroup> 
+    <PackageReference Include="FluentValidation.AspNetCore" />  
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" />
     <PackageReference Include="Microsoft.Data.SqlClient" />
     <PackageReference Include="Scrutor" />
   </ItemGroup>

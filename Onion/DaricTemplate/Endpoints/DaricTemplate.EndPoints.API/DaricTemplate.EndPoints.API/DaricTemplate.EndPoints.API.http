@@ -1,0 +1,6 @@
+@DaricTemplate.EndPoints.API_HostAddress = http://localhost:5128
+
+GET {{DaricTemplate.EndPoints.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,4 +1,6 @@
-﻿using Daric.Core.Contracts.Data.Commands;
+﻿
+
+using Daric.Core.Contracts.Data.Commands;
 using Daric.Infra.Data.Commands;
 using DaricTemplate.Core.Contracts.BaseInfo.CountryLocations;
 using DaricTemplate.Core.Domain.BaseInfo.CountryLocations.Entities;
@@ -26,14 +28,14 @@ ICountryLocationCommandRepository
     public async Task CreateAsync(CountryLocation countryLocation)
     {
         await _countryLocations.AddAsync(countryLocation);
-        await _unitOfWork.CommitAsync();
+        await _unitOfWork.SaveChangesAsync();
     }
     
     public async Task<CountryLocation> UpdateAsync(CountryLocation countryLocation)
     {
         Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<CountryLocation> countryLocationResult =
             _countryLocations.Update(countryLocation);
-        await _unitOfWork.CommitAsync();
+        await _unitOfWork.SaveChangesAsync();
         return countryLocationResult.Entity;
     }
 }

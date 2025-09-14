@@ -3,18 +3,13 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" />
-    <PackageReference Include="FluentValidation.AspNetCore" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" /> 
+ 
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+	  
     <PackageReference Include="Scalar.AspNetCore" />
     <PackageReference Include="Scrutor" />
     <PackageReference Include="Serilog" />
@@ -28,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\DaricTemplate.Core.ApplicationService\DaricTemplate.Core.ApplicationService.csproj" />
     <ProjectReference Include="..\..\..\Core\DaricTemplate.Core.Contracts\DaricTemplate.Core.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\Core\DaricTemplate.Core.Domain\DaricTemplate.Core.Domain.csproj" />
     <ProjectReference Include="..\..\..\Core\DaricTemplate.Core.Infrastructure\DaricTemplate.Core.Infrastructure.csproj" />
     <ProjectReference Include="..\..\..\Infra\Data\DaricTemplate.Infra.Data.Commands\DaricTemplate.Infra.Data.Commands.csproj" />
     <ProjectReference Include="..\..\..\Infra\Data\DaricTemplate.Infra.Data.Queries\DaricTemplate.Infra.Data.Queries.csproj" />
@@ -35,27 +31,16 @@
 
 
   <ItemGroup>
-    <Reference Include="Daric.Core.ApplicationServices">
-      <HintPath>..\..\..\..\..\Onion\src\Framework\Core\Daric.Core.ApplicationServices\bin\Debug\net9.0\Daric.Core.ApplicationServices.dll</HintPath>
-    </Reference>
-    <Reference Include="Daric.Core.Contracts">
-      <HintPath>..\..\..\..\..\Onion\src\Framework\Core\Daric.Core.Contracts\bin\Debug\net9.0\Daric.Core.Contracts.dll</HintPath>
-    </Reference>
-    <Reference Include="Daric.Core.Domain">
-      <HintPath>..\..\..\..\..\Onion\src\Framework\Core\Daric.Core.Domain\bin\Debug\net9.0\Daric.Core.Domain.dll</HintPath>
-    </Reference>
-    <Reference Include="Daric.Core.Infrastructure">
-      <HintPath>..\..\..\..\..\Onion\src\Framework\Core\Daric.Core.Infrastructure\bin\Debug\net9.0\Daric.Core.Infrastructure.dll</HintPath>
-    </Reference>
+
     <Reference Include="Daric.EndPoints.Web.Core">
       <HintPath>..\..\..\..\..\Onion\src\Framework\EndPoints\Daric.EndPoints.Web.Core\bin\Debug\net9.0\Daric.EndPoints.Web.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Daric.Extensions.ObjectMappers.AutoMapper">
-      <HintPath>..\..\..\..\..\Extensions\Daric.Extensions.ObjectMappers.AutoMapper\bin\Debug\net9.0\Daric.Extensions.ObjectMappers.AutoMapper.dll</HintPath>
-    </Reference>
-    <Reference Include="Daric.Infra.Data.Commands">
-      <HintPath>..\..\..\..\..\Onion\src\Framework\Infra\Data\Daric.Infra.Data.Commands\bin\Debug\net9.0\Daric.Infra.Data.Commands.dll</HintPath>
-    </Reference>
+    
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="logs\" />
   </ItemGroup>
 
 </Project>

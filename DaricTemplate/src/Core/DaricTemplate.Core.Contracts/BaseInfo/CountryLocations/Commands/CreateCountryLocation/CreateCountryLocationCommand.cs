@@ -1,6 +1,5 @@
 ﻿
  
-using Daric.Core.Infrastructure.RequestResponse.Commands;
 
 namespace DaricTemplate.Core.Contracts.BaseInfo.CountryLocations.Commands.CreateCountryLocation;
 public class CreateCountryLocationCommand : ICommand<long>

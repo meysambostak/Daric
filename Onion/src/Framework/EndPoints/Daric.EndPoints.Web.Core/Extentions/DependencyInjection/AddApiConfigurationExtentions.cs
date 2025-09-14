@@ -1,6 +1,7 @@
 ﻿using Daric.EndPoints.Web.Core.Middlewares.ApiExceptionHandler;
+
 using FluentValidation.AspNetCore;
-using System.Data.SqlClient;
+ 
 
 namespace Daric.EndPoints.Web.Core.Extentions.DependencyInjection;
 
@@ -8,18 +9,18 @@ public static class AddApiConfigurationExtensions
 {
     public static IServiceCollection AddFrameworkApiCore(this IServiceCollection services, params string[] assemblyNamesForLoad)
     {
-        //services.AddControllers().AddFluentValidation(); TODO :: BSK Is deprecated
-        services.AddControllers();
-        services.AddFluentValidationAutoValidation();
-        services.AddFluentValidationClientsideAdapters();
+      
+
+        services.AddControllers().AddFluentValidation();
+
         services.AddFrameworkDependencies(assemblyNamesForLoad);
 
         return services;
     }
+     
 
     public static void UseFrameworkApiExceptionHandler(this IApplicationBuilder app)
     {
-        
         app.UseApiExceptionHandler(options =>
         {
             options.AddResponseDetails = (context, ex, error) =>
@@ -39,6 +40,6 @@ public static class AddApiConfigurationExtensions
                 return LogLevel.Error;
             };
         });
-
     }
 }
+

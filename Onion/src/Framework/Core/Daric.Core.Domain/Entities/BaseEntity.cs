@@ -19,7 +19,7 @@ public abstract class BaseEntity<TId> : IAuditableEntity
     public TId Id { get; protected set; }
 
 
-    public BusinessId BusinessId { get; protected set; } = BusinessId.FromGuid(Guid.NewGuid());
+    public BusinessId BusinessId { get; protected set; } = BusinessId.FromGuid(Guid.CreateVersion7(DateTime.Now));
 
     protected BaseEntity() { }
 

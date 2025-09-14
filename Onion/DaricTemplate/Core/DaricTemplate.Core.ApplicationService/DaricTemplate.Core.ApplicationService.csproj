@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+ 
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Framework\Core\Daric.Core.ApplicationServices\Daric.Core.ApplicationServices.csproj" />
+    <ProjectReference Include="..\..\..\src\Framework\Core\Daric.Core.Infrastructure\Daric.Core.Infrastructure.csproj" />
+    <ProjectReference Include="..\DaricTemplate.Core.Contracts\DaricTemplate.Core.Contracts.csproj" />
+    <ProjectReference Include="..\DaricTemplate.Core.Domain\DaricTemplate.Core.Domain.csproj" />
+  </ItemGroup>
+ 
+
+  <ItemGroup>
+    <Reference Include="Daric.Extensions.ObjectMappers.AutoMapper">
+      <HintPath>..\..\..\..\Extensions\Daric.Extensions.ObjectMappers.AutoMapper\bin\Debug\net9.0\Daric.Extensions.ObjectMappers.AutoMapper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+ 
+
+  <ItemGroup>
+    <Folder Include="BaseInfo\CountryLocations\Events\" />
+  </ItemGroup>
+
+   
+
+</Project>

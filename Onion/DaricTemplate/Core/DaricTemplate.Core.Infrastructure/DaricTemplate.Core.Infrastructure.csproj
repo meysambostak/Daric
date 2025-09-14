@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Framework\Core\Daric.Core.Infrastructure\Daric.Core.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Daric.Extensions.ObjectMappers.AutoMapper">
+      <HintPath>..\..\..\..\Extensions\Daric.Extensions.ObjectMappers.AutoMapper\bin\Debug\net9.0\Daric.Extensions.ObjectMappers.AutoMapper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

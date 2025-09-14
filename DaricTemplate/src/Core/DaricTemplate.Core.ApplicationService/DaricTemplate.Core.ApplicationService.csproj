@@ -14,18 +14,13 @@
     <Reference Include="Daric.Core.ApplicationServices">
       <HintPath>..\..\..\..\Onion\src\Framework\Core\Daric.Core.ApplicationServices\bin\Debug\net9.0\Daric.Core.ApplicationServices.dll</HintPath>
     </Reference>
-    <Reference Include="Daric.Core.Contracts">
-      <HintPath>..\..\..\..\Onion\src\Framework\Core\Daric.Core.Contracts\bin\Debug\net9.0\Daric.Core.Contracts.dll</HintPath>
-    </Reference>
-    <Reference Include="Daric.Core.Domain">
-      <HintPath>..\..\..\..\Onion\src\Framework\Core\Daric.Core.Domain\bin\Debug\net9.0\Daric.Core.Domain.dll</HintPath>
-    </Reference>
+ 
+    
     <Reference Include="Daric.Core.Infrastructure">
       <HintPath>..\..\..\..\Onion\src\Framework\Core\Daric.Core.Infrastructure\bin\Debug\net9.0\Daric.Core.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Daric.Extensions.ObjectMappers.AutoMapper">
-      <HintPath>..\..\..\..\Extensions\Daric.Extensions.ObjectMappers.AutoMapper\bin\Debug\net9.0\Daric.Extensions.ObjectMappers.AutoMapper.dll</HintPath>
-    </Reference>
+	  
+   
   </ItemGroup>
 
 </Project>
